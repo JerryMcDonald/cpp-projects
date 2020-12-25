@@ -1,5 +1,7 @@
 #include <iostream>
 #include "profile.hpp"
+#include <string>
+
 using namespace std;
 
 int hobby() {
@@ -44,7 +46,8 @@ int main() {
   if (answer == "yes" || answer == "y") {
     cout << "Please provide your information\n";
     cout << "Name Please: ";
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);
     cout << "\n" << "Age: ";
     cin >> age;
     cout << "\n" << "What state do you live in: ";
@@ -63,7 +66,8 @@ int main() {
     while (add == 1) {
     string hobbie;
     cout << "\n" << "Please add a hobby \n";
-    cin >> hobbie;
+    cin.ignore();
+    getline(cin, hobbie);
     guest.add_hobby(hobbie);
 
     // call the hobby function again
