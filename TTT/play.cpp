@@ -1,35 +1,36 @@
 #include <iostream>
 #include "play.hpp"
+using namespace std;
 
-std::string board[9] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
+string board[9] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
 int player = 1;
 int position = 0;
 
 void introduction() {
 
-  std::cout << "Press [Enter] to begin: ";
-  std::cin.ignore();
+  cout << "Press [Enter] to begin: ";
+  cin.ignore();
 
-  std::cout << "\n";
+  cout << "\n";
 
-  std::cout << "===========\n";
-  std::cout << "Tic-Tac-Toe\n";
-  std::cout << "===========\n\n";
+  cout << "===========\n";
+  cout << "Tic-Tac-Toe\n";
+  cout << "===========\n\n";
   
-  std::cout << "Player 1) ✖\n";
-  std::cout << "Player 2) ⊙\n\n";
+  cout << "Player 1) ✖\n";
+  cout << "Player 2) ⊙\n\n";
 
-  std::cout << "Here's the 3 x 3 grid:\n\n";
+  cout << "Here's the 3 x 3 grid:\n\n";
 
-  std::cout << "     |     |      \n";
-  std::cout << "  1  |  2  |  3   \n";
-  std::cout << "_____|_____|_____ \n";
-  std::cout << "     |     |      \n";
-  std::cout << "  4  |  5  |  6   \n";
-  std::cout << "_____|_____|_____ \n";
-  std::cout << "     |     |      \n";
-  std::cout << "  7  |  8  |  9   \n";
-  std::cout << "     |     |      \n\n";
+  cout << "     |     |      \n";
+  cout << "  1  |  2  |  3   \n";
+  cout << "_____|_____|_____ \n";
+  cout << "     |     |      \n";
+  cout << "  4  |  5  |  6   \n";
+  cout << "_____|_____|_____ \n";
+  cout << "     |     |      \n";
+  cout << "  7  |  8  |  9   \n";
+  cout << "     |     |      \n\n";
 
 }
 
@@ -82,47 +83,47 @@ bool filled_up() {
 }
 void draw() {
 
-  std::cout << "     |     |      \n";
+  cout << "     |     |      \n";
 
-  std::cout << "  " << board[0] << "  |  " << board[1] << "  |  " << board[2] << "\n";
+  cout << "  " << board[0] << "  |  " << board[1] << "  |  " << board[2] << "\n";
 
-  std::cout << "_____|_____|_____ \n";
-  std::cout << "     |     |      \n";
+  cout << "_____|_____|_____ \n";
+  cout << "     |     |      \n";
 
-  std::cout << "  " << board[3] << "  |  " << board[4] << "  |  " << board[5] << "\n";
+  cout << "  " << board[3] << "  |  " << board[4] << "  |  " << board[5] << "\n";
 
-  std::cout << "_____|_____|_____ \n";
-  std::cout << "     |     |      \n";
+  cout << "_____|_____|_____ \n";
+  cout << "     |     |      \n";
 
-  std::cout << "  " << board[6] << "  |  " << board[7] << "  |  " << board[8] << "\n";
-  std::cout << "     |     |      \n";
+  cout << "  " << board[6] << "  |  " << board[7] << "  |  " << board[8] << "\n";
+  cout << "     |     |      \n";
 
-  std::cout << "\n";
+  cout << "\n";
     
 }
 
 void set_position() {
 
-  std::cout << "Player " << player << "'s Turn (Enter 1-9): ";
+  cout << "Player " << player << "'s Turn (Enter 1-9): ";
 
-  while (!(std::cin >> position)) {
+  while (!(cin >> position)) {
 
-    std::cout << "Player " << player << ", please enter a valid number between 1 and 9: ";
-    std::cin.clear();
-    std::cin.ignore();
+    cout << "Player " << player << ", please enter a valid number between 1 and 9: ";
+    cin.clear();
+    cin.ignore();
 
   }
   
-  std::cout << "\n";
+  cout << "\n";
 
   while (board[position-1] != " ") {
 
-    std::cout << "Oops, there's already something in that position!\n\n";
+    cout << "Oops, there's already something in that position!\n\n";
 
-    std::cout << "Player " << player << "'s Turn (Enter 1-9): ";
-    std::cin >> position;
+    cout << "Player " << player << "'s Turn (Enter 1-9): ";
+    cin >> position;
 
-    std::cout << "\n";
+    cout << "\n";
   }
 
 }
@@ -174,10 +175,10 @@ void take_turn() {
 void end_game() {
 
   if (is_winner()) {
-    std::cout << "There's a winner!\n";
+    cout << "There's a winner!\n";
   }
   else if (filled_up()) {
-    std::cout << "There's a tie!\n";
+    cout << "There's a tie!\n";
   }
 
 }
